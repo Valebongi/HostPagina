@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bosque Madera - Loguearse</title>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Iniciar Sesión</h2>
+            <div class="input-group">
+                <label for="user">Usuario o Correo</label>
+                <input type="text" id="user" name="user" placeholder="Ingresa tu usuario o correo" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                    <button type="button" class="show-pass-btn" onclick="togglePasswordLogin()" tabindex="-1">👁️</button>
+                </div>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+    <style>
+        body {
+            background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(33,147,176,0.15);
+            width: 100%;
+            max-width: 350px;
+        }
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2193b0;
+        }
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #b0c4de;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus {
+            border-color: #2193b0;
+            outline: none;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.8rem;
+            background: #2193b0;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #17627a;
+        }
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-wrapper input {
+            flex: 1;
+        }
+        .show-pass-btn {
+            background: none;
+            border: none;
+            position: absolute;
+            right: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #2193b0;
+            padding: 0 0.2rem;
+        }
+        .show-pass-btn:active {
+            color: #17627a;
+        }
+    </style>
+    <script>
+        function togglePasswordLogin() {
+            const pass = document.getElementById('password');
+            pass.type = pass.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>

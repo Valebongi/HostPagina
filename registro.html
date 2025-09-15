@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .registro-container {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(247,151,30,0.15);
+            width: 100%;
+            max-width: 400px;
+        }
+        .registro-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #f7971e;
+        }
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ffd200;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus {
+            border-color: #f7971e;
+            outline: none;
+        }
+        .show-password-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            gap: 0.5rem;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.8rem;
+            background: #f7971e;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #b97a16;
+        }
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .social-title {
+            margin-bottom: 1rem;
+            color: #888;
+            font-size: 1rem;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 0.7rem;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .social-btn .emoji {
+            font-size: 1.3rem;
+            margin-right: 0.7rem;
+        }
+        .facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+        .facebook:hover {
+            background: #145db2;
+        }
+        .google {
+            background: #ea4335;
+            color: #fff;
+        }
+        .google:hover {
+            background: #c23321;
+        }
+        .microsoft {
+            background: #6e4fd7;
+            color: #fff;
+        }
+        .microsoft:hover {
+            background: #4b2fa3;
+        }
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-wrapper input {
+            flex: 1;
+        }
+        .show-pass-btn {
+            background: none;
+            border: none;
+            position: absolute;
+            right: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #f7971e;
+            padding: 0 0.2rem;
+        }
+        .show-pass-btn:active {
+            color: #b97a16;
+        }
+    </style>
+</head>
+<body>
+    <div class="registro-container">
+        <form class="registro-form">
+            <h2>Registro de Usuario</h2>
+            <div class="input-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="input-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+            </div>
+            <div class="input-group">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Elige un nombre de usuario" required>
+            </div>
+            <div class="input-group">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
+                    <button type="button" class="show-pass-btn" onclick="togglePasswordRegistro('password')" tabindex="-1">👁️</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="confirmar">Confirmar contraseña</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirmar" name="confirmar" placeholder="Repite la contraseña" required>
+                    <button type="button" class="show-pass-btn" onclick="togglePasswordRegistro('confirmar')" tabindex="-1">👁️</button>
+                </div>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+        <div class="social-login">
+            <p class="social-title">O regístrate con:</p>
+            <button class="social-btn facebook" type="button">
+                <span class="emoji">🔵</span> Facebook
+            </button>
+            <button class="social-btn google" type="button">
+                <span class="emoji">🟠</span> Google
+            </button>
+            <button class="social-btn microsoft" type="button">
+                <span class="emoji">🟣</span> Microsoft
+            </button>
+        </div>
+    </div>
+    <script>
+        function togglePasswordRegistro(id) {
+            const pass = document.getElementById(id);
+            pass.type = pass.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
