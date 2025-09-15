@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bosque Madera - Inicio</title>
+    <title>Bosque Madera - Productos</title>
     <style>
         body {
             background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
@@ -27,16 +27,17 @@
         .menu a:hover {
             background-color: rgba(255, 255, 255, 0.4);
         }
-        .contenido {
-            text-align: center;
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
             padding: 2em;
         }
-        .arbol {
-            font-size: 5em;
-            animation: saltar 1.5s infinite alternate;
-        }
-        @keyframes saltar {
-            to { transform: translateY(-20px);}
+        .producto {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 1em;
+            border-radius: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -46,11 +47,22 @@
         <a href="productos.html">Productos</a>
         <a href="contacto.html">Contacto</a>
     </nav>
-    <div class="contenido">
-        <div class="arbol">🌳</div>
-        <h1>Bienvenido a Bosque Madera</h1>
-        <p>Tu espacio para descubrir la naturaleza y la madera.</p>
-        <p>Explora nuestra selección de productos sostenibles y contacta con nosotros para más información.</p>
+    <div class="productos">
+        <div class="producto">
+            <h2>🪑 Sillas</h2>
+            <p>Sillas artesanales de madera sostenible</p>
+            <p>Desde $99.99</p>
+        </div>
+        <div class="producto">
+            <h2>🛋️ Mesas</h2>
+            <p>Mesas de comedor y café</p>
+            <p>Desde $199.99</p>
+        </div>
+        <div class="producto">
+            <h2>📚 Estanterías</h2>
+            <p>Estanterías modulares personalizables</p>
+            <p>Desde $149.99</p>
+        </div>
     </div>
 </body>
 </html>
