@@ -1,109 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bosque Madera - Loguearse</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <title>Bosque Madera - Login</title>
+    <style>
+    .login-ajustada {
+        background: rgba(255,255,255,0.92);
+        border-radius: 14px;
+        box-shadow: 0 4px 24px rgba(44,24,16,0.10);
+        border: 1.5px solid #eae0d5;
+        padding: 2.5em 3.5em 2.5em 2.5em;
+    }
+</style>
 </head>
 <body>
-    <div class="login-container">
-        <form class="login-form">
-            <h2>Iniciar Sesión</h2>
-            <div class="input-group">
+    <nav class="menu">
+        <div class="menu-left">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="menu-right">
+            <a href="login.html">👤 Login</a>
+            <a href="registro.html">Registrarse</a>
+        </div>
+    </nav>
+    <div class="contenido">
+        <h1>Iniciar Sesión</h1>
+        <form class="formulario-contacto login-ajustada" style="max-width:440px; margin: 3em auto;">
+            <div class="campo">
                 <label for="user">Usuario o Correo</label>
                 <input type="text" id="user" name="user" placeholder="Ingresa tu usuario o correo" required>
             </div>
-            <div class="input-group">
+            <div class="campo">
                 <label for="password">Contraseña</label>
                 <div class="password-wrapper">
                     <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-                    <button type="button" class="show-pass-btn" onclick="togglePasswordLogin()" tabindex="-1">👁️</button>
+                    <button type="button" class="show-pass-btn" onclick="togglePasswordLogin()" tabindex="-1" aria-label="Mostrar contraseña">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5e34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
                 </div>
             </div>
             <button type="submit">Ingresar</button>
         </form>
     </div>
-    <style>
-        body {
-            background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .login-container {
-            background: #fff;
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(33,147,176,0.15);
-            width: 100%;
-            max-width: 350px;
-        }
-        .login-form h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #2193b0;
-        }
-        .input-group {
-            margin-bottom: 1.2rem;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 500;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 0.7rem;
-            border: 1px solid #b0c4de;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-        .input-group input:focus {
-            border-color: #2193b0;
-            outline: none;
-        }
-        button[type="submit"] {
-            width: 100%;
-            padding: 0.8rem;
-            background: #2193b0;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        button[type="submit"]:hover {
-            background: #17627a;
-        }
-        .password-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        .password-wrapper input {
-            flex: 1;
-        }
-        .show-pass-btn {
-            background: none;
-            border: none;
-            position: absolute;
-            right: 10px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: #2193b0;
-            padding: 0 0.2rem;
-        }
-        .show-pass-btn:active {
-            color: #17627a;
-        }
-    </style>
+    <a href="https://wa.me/5493515181982" class="whatsapp-btn" target="_blank">
+        📱
+    </a>
     <script>
         function togglePasswordLogin() {
             const pass = document.getElementById('password');
