@@ -5,9 +5,41 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bosque Madera</title>
+    <style>
+      body {
+        background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      .bienvenida {
+        text-align: center;
+        margin-top: 10vh;
+        color: #333;
+      }
+      .bienvenida h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+      }
+      .bienvenida p {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+      }
+      .arbol {
+        font-size: 5em;
+        animation: saltar 1.5s infinite alternate;
+      }
+      @keyframes saltar {
+        to { transform: translateY(-20px);}
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="bienvenida">
+        <div class="arbol">🌳</div>
+        <h1>Bienvenido a Bosque Madera</h1>
+        <p>Tu espacio para descubrir la naturaleza y la madera.</p>
+      </div>
+    </div>
     <script type="module" src="/src/Main.jsx"></script>
   </body>
 </html>
